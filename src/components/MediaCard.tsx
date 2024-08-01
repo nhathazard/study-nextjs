@@ -1,23 +1,29 @@
-import * as React from 'react';
-import Image from 'next/image';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Image from "next/image";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-export default function MediaCard({ heading, text }: { heading: string; text: string }) {
+export default function MediaCard({
+  heading,
+  text,
+}: {
+  heading: string;
+  text: string;
+}) {
   return (
     <Card>
       <Image
         alt="Random image"
-        src="https://source.unsplash.com/random"
+        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/images/DomDom8DAudio-JackG5R-6897160-1722441694404.mp3`}
         width={640}
         height={480}
         style={{
-          maxWidth: '100%',
-          height: '200px',
-          objectFit: 'cover',
+          maxWidth: "100%",
+          height: "200px",
+          objectFit: "cover",
         }}
       />
       <CardContent>
