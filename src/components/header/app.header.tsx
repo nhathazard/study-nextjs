@@ -104,7 +104,14 @@ export default function AppHeader() {
       <MenuItem>
         <Link href={"profile"}>Profile</Link>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem
+        onClick={() => {
+          handleMenuClose();
+          signOut();
+        }}
+      >
+        Log out
+      </MenuItem>
     </Menu>
   );
 
@@ -206,7 +213,9 @@ export default function AppHeader() {
               </>
             ) : (
               <>
-                <Link href={"/api/auth/signin"}>login</Link>
+                <Link href={"/api/auth/signin"} onClick={() => signIn()}>
+                  login
+                </Link>
               </>
             )}
           </Box>

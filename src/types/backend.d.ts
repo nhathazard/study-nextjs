@@ -40,4 +40,14 @@ declare global {
     };
     result: T[];
   }
+
+  interface IAuthUser {
+    meta: {
+      current: number;
+      pageSize: number;
+      pages: number;
+      total: number;
+    };
+    result: T[];
+  }
 }
