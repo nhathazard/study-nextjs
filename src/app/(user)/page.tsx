@@ -3,10 +3,12 @@ import { sendRequest } from "@/utils/api";
 import { Container } from "@mui/material";
 
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "../(guest)/auth/[...nextauth]/route";
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions);
+  console.log("nhat", session);
+
   const roc = await sendRequest<IBackendRes<ITrackTop[]>>({
     url: "http://localhost:8080/api/v1/track/top",
     method: "POST",
