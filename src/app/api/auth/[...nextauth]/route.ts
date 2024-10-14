@@ -46,17 +46,28 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user, account, profile, trigger }) {
-      if (trigger === "signIn" && account?.provider === "github") {
-        // const res = await sendRequest<IBackendRes<JWT>>({
-        //   url: "http://localhost:8080/api/v1/auth/social-media",
-        //   method: "POST",
-        //   body: {
-        //     password: "123456",
-        //     username: "nhatvandoan@gmail.com",
-        //   },
-        // });
-        // console.log("check ", res);
-      }
+      // if (trigger === "signIn" && account?.provider !== "credentials") {
+      //   const res = await sendRequest<IBackendRes<JWT>>({
+      //     url: "http://localhost:8080/api/v1/auth/login",
+      //     method: "POST",
+      //     body: {
+      //       password: "123456",
+      //       username: "admin@gmail.com",
+      //     },
+      //   });
+      //   console.log("check ", res);
+      // }
+      // if (trigger === "signIn" && account?.provider === "credentials") {
+      //   const res = await sendRequest<IBackendRes<JWT>>({
+      //     url: "http://localhost:8080/api/v1/auth/login",
+      //     method: "POST",
+      //     body: {
+      //       password: "123456",
+      //       username: "admin@gmail.com",
+      //     },
+      //   });
+      //   console.log("check ", res);
+      // }
       return token;
     },
     session({ session, token, user }) {
