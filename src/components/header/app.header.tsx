@@ -215,7 +215,7 @@ export default function AppHeader() {
               </>
             ) : (
               <>
-                <Link href={"/auth/signin"} onClick={() => signIn()}>
+                <Link href={"api/auth/signin"} onClick={() => signIn()}>
                   login
                 </Link>
               </>
